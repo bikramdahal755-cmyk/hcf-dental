@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HCF Dental - Your Smile, Our Priority</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --sky:#E8F8FF;
+  --blue:#1A9BD7;
+  --blue-dark:#1278A8;
+  --yellow:#FFD25A;
+  --yellow-dark:#E6B83A;
+  --green:#3DBE82;
+  --pink:#FF6B95;
+  --white:#FFFFFF;
+  --text:#1C2B3A;
+  --muted:#5C7A8A;
+  --light:#F0FAFF;
+}
+body{font-family:'Nunito',sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:var(--white);border-bottom:1px solid #E0F0FA;position:sticky;top:0;z-index:100;}
+.logo{font-size:22px;font-weight:800;color:var(--blue);}
+.logo span{color:var(--yellow-dark);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:14px;transition:color .2s;}
+.nav-links a:hover{color:var(--blue);}
+.nav-cta{background:var(--blue);color:#fff;font-weight:700;padding:10px 22px;border-radius:50px;text-decoration:none;font-size:14px;transition:background .2s;}
+.nav-cta:hover{background:var(--blue-dark);}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#E8F8FF 0%,#FFF9E8 100%);padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:540px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#7A5200;font-size:13px;font-weight:700;padding:6px 14px;border-radius:50px;margin-bottom:20px;}
+.hero h1{font-family:'Lora',serif;font-size:44px;font-weight:600;line-height:1.2;color:var(--text);margin-bottom:16px;}
+.hero h1 em{color:var(--blue);font-style:normal;}
+.hero p{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:32px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--blue);color:#fff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:50px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s;border:none;cursor:pointer;font-family:'Nunito',sans-serif;}
+.btn-primary:hover{background:var(--blue-dark);}
+.btn-outline{background:transparent;color:var(--blue);font-weight:700;font-size:15px;padding:14px 28px;border-radius:50px;text-decoration:none;border:2px solid var(--blue);display:inline-flex;align-items:center;gap:8px;transition:all .2s;cursor:pointer;}
+.btn-outline:hover{background:var(--blue);color:#fff;}
+.hero-illustration{display:flex;flex-direction:column;gap:16px;align-items:center;}
+.hero-card{background:#fff;border-radius:20px;padding:20px 24px;box-shadow:0 4px 20px rgba(26,155,215,0.12);display:flex;align-items:center;gap:14px;width:100%;max-width:340px;}
+.hero-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.hero-card h4{font-size:14px;font-weight:700;color:var(--text);}
+.hero-card p{font-size:12px;color:var(--muted);}
+
+/* STATS BAR */
+.stats-bar{background:var(--blue);padding:28px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
+.stat-item h3{font-size:28px;font-weight:800;color:#fff;}
+.stat-item p{font-size:13px;color:rgba(255,255,255,0.75);font-weight:600;margin-top:2px;}
+
+/* SERVICES */
+.section{padding:72px 48px;}
+.section-label{font-size:13px;font-weight:700;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
+.section-title{font-family:'Lora',serif;font-size:34px;font-weight:600;color:var(--text);line-height:1.25;margin-bottom:12px;}
+.section-sub{font-size:16px;color:var(--muted);line-height:1.6;max-width:520px;}
+.section-header{margin-bottom:48px;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.service-card{background:var(--light);border-radius:20px;padding:28px;transition:transform .2s,box-shadow .2s;cursor:pointer;}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,155,215,0.13);}
+.service-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;}
+.service-card h3{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.service-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+.service-tag{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--blue);text-decoration:none;}
+
+/* GALLERY */
+.gallery-section{background:#F8FEFF;padding:72px 48px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:0;}
+.gallery-card{border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);background:#fff;}
+.gallery-before-after{display:grid;grid-template-columns:1fr 1fr;}
+.gallery-panel{padding:28px 20px;text-align:center;position:relative;}
+.gallery-panel.before{background:linear-gradient(135deg,#FFF0F0,#FFE8E8);}
+.gallery-panel.after{background:linear-gradient(135deg,#E8FFF2,#D0FFE8);}
+.gallery-label{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;}
+.gallery-panel.before .gallery-label{color:#C0392B;}
+.gallery-panel.after .gallery-label{color:#27AE60;}
+.tooth-svg{width:60px;height:70px;margin:0 auto 10px;}
+.gallery-desc{font-size:12px;color:var(--muted);line-height:1.5;}
+.gallery-card-title{padding:14px 20px;font-size:14px;font-weight:700;color:var(--text);text-align:center;border-top:1px solid #F0F0F0;}
+.divider-line{width:2px;background:#fff;position:absolute;right:0;top:0;bottom:0;}
+
+/* DENTIST */
+.dentist-section{background:#fff;padding:72px 48px;}
+.dentist-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.dentist-photo-wrap{position:relative;background:linear-gradient(135deg,#E0F4FF,#FFF5E0);border-radius:28px;padding:40px;text-align:center;}
+.dentist-avatar{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;font-size:64px;margin:0 auto 20px;}
+.dentist-name-card{background:#fff;border-radius:14px;padding:16px 20px;box-shadow:0 4px 16px rgba(0,0,0,0.07);display:inline-block;}
+.dentist-name-card h4{font-size:17px;font-weight:800;color:var(--text);}
+.dentist-name-card p{font-size:13px;color:var(--blue);font-weight:600;}
+.badge-chip{background:var(--green);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:50px;display:inline-block;margin-top:10px;}
+.dentist-info h2{font-family:'Lora',serif;font-size:34px;font-weight:600;color:var(--text);margin-bottom:16px;line-height:1.25;}
+.dentist-info p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px;}
+.cred-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.cred-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);}
+.cred-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;}
+
+/* REVIEWS */
+.reviews-section{padding:72px 48px;background:linear-gradient(135deg,#E8F8FF,#FFF9E8);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.review-card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+.stars{color:var(--yellow-dark);font-size:16px;margin-bottom:12px;}
+.review-card p{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:16px;font-style:italic;}
+.reviewer{display:flex;align-items:center;gap:10px;}
+.reviewer-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;}
+.reviewer-name{font-size:13px;font-weight:700;color:var(--text);}
+.reviewer-date{font-size:11px;color:var(--muted);}
+
+/* MAP SECTION */
+.map-section{padding:72px 48px;background:#fff;}
+.map-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.map-embed{border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.10);height:380px;}
+.map-embed iframe{width:100%;height:100%;border:none;}
+.map-info h2{font-family:'Lora',serif;font-size:32px;font-weight:600;color:var(--text);margin-bottom:8px;}
+.map-info .sub{font-size:15px;color:var(--muted);line-height:1.6;margin-bottom:28px;}
+.map-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;}
+.m-icon{width:40px;height:40px;background:var(--light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.m-info h4{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;}
+.m-info p{font-size:14px;color:var(--text);font-weight:600;line-height:1.5;}
+.directions-btn{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:11px 22px;background:var(--green);color:#fff;border-radius:50px;text-decoration:none;font-weight:700;font-size:14px;transition:opacity .2s;}
+.directions-btn:hover{opacity:.9;}
+
+/* CONTACT */
+.contact-section{background:linear-gradient(135deg,#1278A8,#1A9BD7);padding:72px 48px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.contact-section h2{font-family:'Lora',serif;font-size:34px;font-weight:600;color:#fff;margin-bottom:12px;}
+.contact-section .sub{font-size:16px;color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:32px;}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px;}
+.c-icon{width:40px;height:40px;background:rgba(255,255,255,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.c-info h4{font-size:13px;color:rgba(255,255,255,0.65);font-weight:600;margin-bottom:2px;}
+.c-info p{font-size:15px;color:#fff;font-weight:600;}
+.book-form{background:#fff;border-radius:24px;padding:32px;}
+.book-form h3{font-size:18px;font-weight:800;color:var(--text);margin-bottom:20px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.form-field{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;}
+.form-field label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+.form-field input,.form-field select{padding:11px 14px;border:1px solid #D0E8F4;border-radius:10px;font-size:14px;color:var(--text);font-family:'Nunito',sans-serif;outline:none;transition:border .2s;background:#F8FEFF;}
+.form-field input:focus,.form-field select:focus{border-color:var(--blue);}
+.book-btn{width:100%;padding:14px;background:var(--blue);color:#fff;font-weight:800;font-size:15px;border:none;border-radius:50px;cursor:pointer;transition:background .2s;font-family:'Nunito',sans-serif;}
+.book-btn:hover{background:var(--blue-dark);}
+
+/* FOOTER */
+footer{background:var(--text);color:rgba(255,255,255,0.6);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;font-size:13px;}
+.footer-logo{font-size:18px;font-weight:800;color:#fff;}
+.footer-logo span{color:var(--yellow);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{color:rgba(255,255,255,0.55);text-decoration:none;font-weight:600;font-size:12px;transition:color .2s;}
+.footer-links a:hover{color:#fff;}
+
+/* WHATSAPP BUTTON */
+.wa-btn{
+  position:fixed;bottom:28px;right:28px;z-index:999;
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.45);
+  text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.55);}
+.wa-btn svg{width:30px;height:30px;fill:#fff;}
+.wa-tooltip{
+  position:fixed;bottom:36px;right:96px;z-index:998;
+  background:#1C2B3A;color:#fff;
+  font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;
+  padding:8px 16px;border-radius:50px;
+  opacity:0;pointer-events:none;
+  transition:opacity .2s;white-space:nowrap;
+}
+.wa-btn:hover + .wa-tooltip{opacity:1;}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:14px 20px;}
+  .nav-links{display:none;}
+  .hero,.dentist-grid,.contact-section,.map-grid{grid-template-columns:1fr;padding:40px 20px;}
+  .hero h1{font-size:30px;}
+  .services-grid,.reviews-grid,.gallery-grid{grid-template-columns:1fr;padding:40px 20px;}
+  .stats-bar{grid-template-columns:repeat(2,1fr);padding:24px 20px;}
+  .section,.dentist-section,.reviews-section,.gallery-section,.map-section{padding:48px 20px;}
+  footer{flex-direction:column;gap:14px;text-align:center;padding:24px 20px;}
+  .map-embed{height:260px;}
+  .wa-btn{bottom:20px;right:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<!-- TO USE: Replace YOUR_PHONE_NUMBER with your number in international format, e.g. 9779812345678 -->
+<a class="wa-btn" href="https://wa.me/9779812345678?text=Hello%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20HCF%20Dental." target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+<div class="wa-tooltip">Chat on WhatsApp</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">HCF <span>Dental</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Before & After</a></li>
+    <li><a href="#dentist">Our Dentist</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">📅 Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <div class="hero-badge">⭐ Trusted Family Dentistry</div>
+    <h1>Your Smile Deserves the <em>Best Care</em></h1>
+    <p>We offer gentle, friendly dental care for your whole family — from routine checkups to beautiful smile transformations.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">📅 Book Appointment</a>
+      <a href="#services" class="btn-outline">Our Services →</a>
+    </div>
+  </div>
+  <div class="hero-illustration">
+    <div class="hero-card">
+      <div class="hero-icon" style="background:#E8F8FF;">🦷</div>
+      <div><h4>Gentle & Painless Care</h4><p>Modern techniques for a comfortable visit</p></div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-icon" style="background:#FFF5E0;">😊</div>
+      <div><h4>Family Friendly</h4><p>Kids to seniors — all ages welcome</p></div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-icon" style="background:#F0FFF8;">⏰</div>
+      <div><h4>Flexible Appointments</h4><p>Morning & evening slots available</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><h3>2,500+</h3><p>Happy Patients</p></div>
+  <div class="stat-item"><h3>10+</h3><p>Years Experience</p></div>
+  <div class="stat-item"><h3>98%</h3><p>Patient Satisfaction</p></div>
+  <div class="stat-item"><h3>15+</h3><p>Services Offered</p></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-header">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Dental Services for Every Need</h2>
+    <p class="section-sub">From preventive care to cosmetic procedures, we take care of your smile at every stage of life.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon" style="background:#E8F8FF;">🔍</div>
+      <h3>General Checkup</h3>
+      <p>Routine exams, X-rays, and professional cleaning to keep your teeth healthy and catch issues early.</p>
+      <span class="service-tag">Learn more →</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#FFF5E0;">✨</div>
+      <h3>Teeth Whitening</h3>
+      <p>Professional whitening treatments that deliver fast, dramatic results in a single visit.</p>
+      <span class="service-tag">Learn more →</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#F0FFF8;">🦷</div>
+      <h3>Dental Fillings</h3>
+      <p>Tooth-colored composite fillings that restore strength and look completely natural.</p>
+      <span class="service-tag">Learn more →</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#FFE8EF;">👑</div>
+      <h3>Crowns & Bridges</h3>
+      <p>Durable, natural-looking crowns and bridges to restore damaged or missing teeth.</p>
+      <span class="service-tag">Learn more →</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#EAE8FF;">😬</div>
+      <h3>Orthodontics</h3>
+      <p>Braces and clear aligners for straighter teeth — options available for teens and adults.</p>
+      <span class="service-tag">Learn more →</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon" style="background:#E8FFF5;">🚨</div>
+      <h3>Emergency Dental</h3>
+      <p>Same-day appointments for toothaches, broken teeth, and urgent dental problems.</p>
+      <span class="service-tag">Learn more →</span>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="section-header">
+    <div class="section-label">Smile Transformations</div>
+    <h2 class="section-title">Before & After Gallery</h2>
+    <p class="section-sub">See real results from our patients. Every smile tells a story of confidence restored.</p>
+  </div>
+  <div class="gallery-grid">
+
+    <!-- Case 1: Whitening -->
+    <div class="gallery-card">
+      <div class="gallery-before-after">
+        <div class="gallery-panel before">
+          <div class="gallery-label">Before</div>
+          <svg class="tooth-svg" viewBox="0 0 60 70"><path d="M10 20 Q10 5 30 5 Q50 5 50 20 L48 50 Q46 65 40 65 Q34 65 30 55 Q26 65 20 65 Q14 65 12 50 Z" fill="#D4C4A0" stroke="#B8A880" stroke-width="1.5"/><path d="M22 15 Q30 12 38 15" fill="none" stroke="#A08860" stroke-width="1" opacity="0.5"/><path d="M15 30 Q20 28 25 30" fill="none" stroke="#C0A870" stroke-width="0.8" opacity="0.4"/></svg>
+          <div class="gallery-desc">Stained & yellowed from coffee & tea</div>
+        </div>
+        <div class="gallery-panel after">
+          <div class="gallery-label">After</div>
+          <svg class="tooth-svg" viewBox="0 0 60 70"><path d="M10 20 Q10 5 30 5 Q50 5 50 20 L48 50 Q46 65 40 65 Q34 65 30 55 Q26 65 20 65 Q14 65 12 50 Z" fill="#F8F4EE" stroke="#E0D8CC" stroke-width="1.5"/><path d="M22 15 Q30 12 38 15" fill="none" stroke="#E8E0D4" stroke-width="1" opacity="0.3"/></svg>
+          <div class="gallery-desc">Bright, white & confident smile</div>
+        </div>
+      </div>
+      <div class="gallery-card-title">✨ Teeth Whitening — 1 Session</div>
+    </div>
+
+    <!-- Case 2: Filling -->
+    <div class="gallery-card">
+      <div class="gallery-before-after">
+        <div class="gallery-panel before">
+          <div class="gallery-label">Before</div>
+          <svg class="tooth-svg" viewBox="0 0 60 70"><path d="M10 20 Q10 5 30 5 Q50 5 50 20 L48 50 Q46 65 40 65 Q34 65 30 55 Q26 65 20 65 Q14 65 12 50 Z" fill="#F0EAE0" stroke="#D8D0C0" stroke-width="1.5"/><ellipse cx="30" cy="28" rx="8" ry="5" fill="#8B6050" opacity="0.8"/><ellipse cx="30" cy="28" rx="5" ry="3" fill="#5C3828" opacity="0.7"/></svg>
+          <div class="gallery-desc">Painful cavity with visible decay</div>
+        </div>
+        <div class="gallery-panel after">
+          <div class="gallery-label">After</div>
+          <svg class="tooth-svg" viewBox="0 0 60 70"><path d="M10 20 Q10 5 30 5 Q50 5 50 20 L48 50 Q46 65 40 65 Q34 65 30 55 Q26 65 20 65 Q14 65 12 50 Z" fill="#F8F4EE" stroke="#E0D8CC" stroke-width="1.5"/><ellipse cx="30" cy="28" rx="8" ry="5" fill="#EDE8E0" opacity="0.9"/></svg>
+          <div class="gallery-desc">Seamless tooth-colored filling</div>
+        </div>
+      </div>
+      <div class="gallery-card-title">🦷 Composite Filling — Pain Free</div>
+    </div>
+
+    <!-- Case 3: Crown -->
+    <div class="gallery-card">
+      <div class="gallery-before-after">
+        <div class="gallery-panel before">
+          <div class="gallery-label">Before</div>
+          <svg class="tooth-svg" viewBox="0 0 60 70"><path d="M10 20 Q10 5 30 5 Q50 5 50 20 L44 48 Q42 63 36 63 Q30 55 24 63 Q18 63 16 48 Z" fill="#D8C8A8" stroke="#B8A880" stroke-width="1.5"/><path d="M38 10 L44 5" stroke="#C0A870" stroke-width="2" stroke-linecap="round"/><path d="M44 10 Q50 8 50 15" fill="none" stroke="#C0A870" stroke-width="1.5"/></svg>
+          <div class="gallery-desc">Cracked & broken tooth causing pain</div>
+        </div>
+        <div class="gallery-panel after">
+          <div class="gallery-label">After</div>
+          <svg class="tooth-svg" viewBox="0 0 60 70"><path d="M10 20 Q10 5 30 5 Q50 5 50 20 L48 50 Q46 65 40 65 Q34 65 30 55 Q26 65 20 65 Q14 65 12 50 Z" fill="#F8F4EE" stroke="#E0D8CC" stroke-width="1.5"/><path d="M15 22 Q30 18 45 22" fill="none" stroke="#E8E0D4" stroke-width="1.5" opacity="0.5"/></svg>
+          <div class="gallery-desc">Full ceramic crown — natural look</div>
+        </div>
+      </div>
+      <div class="gallery-card-title">👑 Ceramic Crown — Full Restore</div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:36px;">
+    <a href="#contact" class="btn-primary" style="display:inline-flex;">📅 Book Your Smile Consultation</a>
+  </div>
+</section>
+
+<!-- DENTIST -->
+<section class="dentist-section" id="dentist">
+  <div class="dentist-grid">
+    <div class="dentist-photo-wrap">
+      <div class="dentist-avatar">👨‍⚕️</div>
+      <div class="dentist-name-card">
+        <h4>Dr. [Your Name]</h4>
+        <p>Lead Dentist, BDS MDS</p>
+      </div>
+      <br>
+      <span class="badge-chip">✅ 10+ Years Experience</span>
+    </div>
+    <div class="dentist-info">
+      <div class="section-label">Meet the Dentist</div>
+      <h2>Caring Hands, Gentle Touch</h2>
+      <p>Our lead dentist brings years of expertise and a warm, patient-first approach to every appointment. Whether you're nervous about dental visits or just need a routine checkup, you're in great hands.</p>
+      <ul class="cred-list">
+        <li><span class="cred-dot"></span> BDS from [Your University]</li>
+        <li><span class="cred-dot"></span> Specialist in Cosmetic & Restorative Dentistry</li>
+        <li><span class="cred-dot"></span> Certified in Painless Dentistry</li>
+        <li><span class="cred-dot"></span> Member of Nepal Dental Association</li>
+      </ul>
+      <a href="#contact" class="btn-primary">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-header">
+    <div class="section-label">Patient Reviews</div>
+    <h2 class="section-title">What Our Patients Say</h2>
+    <p class="section-sub">Hundreds of happy smiles and counting. Here's what real patients have to share.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Best dental experience I've had! The staff is so friendly and made me feel completely at ease. My teeth look amazing."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#1A9BD7;">R</div>
+        <div><div class="reviewer-name">Ramesh Sharma</div><div class="reviewer-date">March 2025</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"I was so nervous about my first visit but the dentist was incredibly gentle. No pain at all! Highly recommend HCF Dental."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#FF6B95;">S</div>
+        <div><div class="reviewer-name">Sunita Karki</div><div class="reviewer-date">February 2025</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Brought my whole family here. The kids actually enjoy their checkups now! Clean clinic, professional staff, great results."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#3DBE82;">A</div>
+        <div><div class="reviewer-name">Arjun Thapa</div><div class="reviewer-date">January 2025</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP & LOCATION -->
+<section class="map-section" id="location">
+  <div class="section-header">
+    <div class="section-label">Find Us</div>
+    <h2 class="section-title">Our Location</h2>
+  </div>
+  <div class="map-grid">
+    <div class="map-embed">
+      <!-- REPLACE the src below with your own Google Maps embed URL -->
+      <!-- How to get it: Go to Google Maps → search your clinic → Share → Embed a map → Copy the iframe src -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4!2d85.3240!3d27.7172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zKHlvdXIgY2xpbmljKQ!5e0!3m2!1sen!2snp!4v1234567890"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="HCF Dental Location">
+      </iframe>
+    </div>
+    <div class="map-info">
+      <h2>Easy to Find, Easy to Reach</h2>
+      <p class="sub">We're conveniently located in the heart of the city. Come visit us — parking is available nearby.</p>
+      <div class="map-detail">
+        <div class="m-icon">📍</div>
+        <div class="m-info"><h4>Address</h4><p>[Your Full Clinic Address]<br>Nepal</p></div>
+      </div>
+      <div class="map-detail">
+        <div class="m-icon">📞</div>
+        <div class="m-info"><h4>Phone</h4><p>+977-XXXX-XXXXX</p></div>
+      </div>
+      <div class="map-detail">
+        <div class="m-icon">🕐</div>
+        <div class="m-info"><h4>Opening Hours</h4><p>Sun–Fri: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 3:00 PM</p></div>
+      </div>
+      <div class="map-detail">
+        <div class="m-icon">🚌</div>
+        <div class="m-info"><h4>Nearby Landmark</h4><p>[Nearest Landmark or Bus Stop]</p></div>
+      </div>
+      <a class="directions-btn" href="https://maps.google.com/?q=HCF+Dental+Nepal" target="_blank">
+        🗺️ Get Directions
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT & BOOKING -->
+<section class="contact-section" id="contact">
+  <div>
+    <h2>Book Your Appointment</h2>
+    <p class="sub">Ready for a healthier, brighter smile? Get in touch or book online — we'd love to see you.</p>
+    <div class="contact-detail">
+      <div class="c-icon">📍</div>
+      <div class="c-info"><h4>Location</h4><p>[Your Clinic Address]</p></div>
+    </div>
+    <div class="contact-detail">
+      <div class="c-icon">📞</div>
+      <div class="c-info"><h4>Phone</h4><p>+977-XXXX-XXXXX</p></div>
+    </div>
+    <div class="contact-detail">
+      <div class="c-icon">🕐</div>
+      <div class="c-info"><h4>Hours</h4><p>Sun–Fri: 8 AM – 6 PM<br>Sat: 9 AM – 3 PM</p></div>
+    </div>
+    <div class="contact-detail">
+      <div class="c-icon">📧</div>
+      <div class="c-info"><h4>Email</h4><p>info@hcfdental.com</p></div>
+    </div>
+  </div>
+  <div class="book-form">
+    <h3>📅 Request Appointment</h3>
+    <div class="form-row">
+      <div class="form-field"><label>First Name</label><input type="text" placeholder="Ramesh"></div>
+      <div class="form-field"><label>Last Name</label><input type="text" placeholder="Sharma"></div>
+    </div>
+    <div class="form-field"><label>Phone Number</label><input type="tel" placeholder="+977-XXXX-XXXXX"></div>
+    <div class="form-field"><label>Service</label>
+      <select>
+        <option>General Checkup</option>
+        <option>Teeth Whitening</option>
+        <option>Dental Filling</option>
+        <option>Orthodontics</option>
+        <option>Crown / Bridge</option>
+        <option>Emergency Care</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-field"><label>Preferred Date</label><input type="date"></div>
+    <button class="book-btn">Confirm Appointment →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">HCF <span>Dental</span></div>
+  <span>© 2025 HCF Dental. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#dentist">Dentist</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
